@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import axios from 'axios';
+import styles from './main.module.css'
 
 export default function Home() {
   const [question, setQuestion] = useState('');
@@ -24,16 +25,17 @@ export default function Home() {
 
   return (
     <div style={{ margin: '20px' }}>
-      <h1 style={{marginBottom: '50px'}}>Информационно-аналитическая система для участиников ИТ-проектов</h1>
-      <form onSubmit={handleSubmit}>
+      <h1 style={{marginBottom: '50px'}}>Информационно-аналитическая система для участников ИТ-проектов</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <input
           type="text"
           placeholder="Введите ваш вопрос..."
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          style={{ width: '300px', height: '30px', marginRight: '10px' }}
+          style={{ width: '300px', height: '40px', marginRight: '10px' }}
+          className={styles.input}
         />
-        <button type="submit" disabled={loading} style={{height: '30px'}}>
+        <button type="submit" disabled={loading} style={{height: '30px'}} className={styles.button}>
           {loading ? 'Загрузка...' : 'Задать вопрос'}
         </button>
       </form>

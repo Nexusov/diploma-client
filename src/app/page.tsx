@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import styles from './main.module.scss';
-import { Header, HistoryBlock, LoginForm, Modal, SideBar } from '@/components';
+import { Header, HistoryBlock, LoginForm, Modal, SideBar, TextAreaBlock } from '@/components';
 
 export default function Home() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -13,6 +13,7 @@ export default function Home() {
             <div className={styles.main}>
                 <Header onLoginClick={() => setModalOpen(true)} />
                 <main className={styles.container}>
+                    <TextAreaBlock />
                     <HistoryBlock />
                 </main>
             </div>

@@ -55,11 +55,6 @@ button {
     transition:
         background-color,
         transform 0.1s ease;
-
-    &:active {
-        background-color: #1b1b1b !important;
-        transform: scale(0.95);
-    }
 }
 
 textarea {

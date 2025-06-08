@@ -1,39 +1,35 @@
 import { ChatItem } from './ui';
+import { chatData } from '@/constants';
 import styles from './HistoryBlock.module.scss';
 
-export const HistoryBlock = () => {
+interface Message {
+    id: number;
+    text: string;
+    isCurrentUser: boolean;
+}
+
+export interface SelectedChatType {
+    name: string;
+    lastText: string;
+    messages: Message[];
+}
+
+interface HistoryBlockProps {
+    onChatClick: (chat: SelectedChatType) => void;
+}
+
+export const HistoryBlock = ({ onChatClick }: HistoryBlockProps) => {
     return (
         <section className={styles.container}>
             <h1 className={styles.title}>История</h1>
-            <ChatItem
-                name="Валидация для формы создания заявки"
-                lastText="ФИО — обязательное поле, от 2 до 100 символов, только буквы (кириллица или
-                латиница), пробел и дефис."
-            />
-            <ChatItem
-                name="UX поведения при создании заявки"
-                lastText="После успешной отправки формы отображается сообщение об успехе и форма полностью сбрасывается; редирект не требуется."
-            />
-
-            <ChatItem
-                name="Дизайн и адаптивность формы"
-                lastText="На мобильных устройствах поля выстраиваются вертикально в один столбец с отступами, элементы не выходят за границы экрана, кнопки и инпуты адаптированы под тач."
-            />
-
-            <ChatItem
-                name="Обработка ошибок при отправке"
-                lastText="При ошибке сервера отображается уведомление в верхней части формы, кнопка отправки повторно активируется, повторная отправка разрешена."
-            />
-
-            <ChatItem
-                name="Форма и сохранение состояния"
-                lastText="Данные формы не сохраняются автоматически, но можно добавить локальное сохранение через localStorage, если пользователь этого ожидает."
-            />
-
-            <ChatItem
-                name="Интеграция с backend"
-                lastText="Форма отправляется на эндпоинт /api/submitRequest методом POST, данные передаются в формате JSON с соответствующими заголовками Content-Type."
-            />
+            {chatData.map((item, index) => (
+                <ChatItem
+                    key={index}
+                    name={item.name}
+                    lastText={item.lastText}
+                    onClick={() => onChatClick(item)}
+                />
+            ))}
         </section>
     );
 };

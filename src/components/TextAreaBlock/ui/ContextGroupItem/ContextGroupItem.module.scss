@@ -4,6 +4,16 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+
+    &:hover {
+        background-color: #1f1f1f;
+    }
+
+    &:active {
+        background-color: #070707;
+    }
 }
 
 .textContainer {

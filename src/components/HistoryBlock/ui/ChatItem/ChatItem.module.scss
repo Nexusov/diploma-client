@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #2e2e2e;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.lastText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

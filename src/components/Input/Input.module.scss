@@ -1,0 +1,19 @@
+.input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+    background: #fafafa;
+    transition: transform 0.3s ease;
+
+    &:focus {
+        border-color: #9e00fa;
+        transform: scaleX(1.01);
+    }
+
+    &:hover {
+        border-color: purple;
+    }
+}

@@ -1,3 +1,39 @@
+.wrapper {
+    position: relative;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    transition:
+        background-color,
+        scale 0.1s ease;
+    cursor: pointer;
+
+    svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    path {
+        fill: black;
+    }
+
+    &:active {
+        background-color: #a1a1a1;
+        scale: 0.95;
+    }
+}
+
 .textArea {
     width: 100%;
     border-radius: 30px;

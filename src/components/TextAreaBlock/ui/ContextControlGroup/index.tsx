@@ -7,7 +7,7 @@ import styles from './ContextControlGroup.module.scss';
 import { useState } from 'react';
 import { Modal } from '@/components/Modal';
 import { AddFileForm } from '../AddFileForm';
-import { AddContextForm } from '../AddContextForm/AddContextForm';
+import { AddContextForm } from '../AddContextForm';
 
 type ModalType = 'file' | 'text' | null;
 

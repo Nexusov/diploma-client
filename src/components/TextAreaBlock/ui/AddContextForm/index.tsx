@@ -14,7 +14,7 @@ export const AddContextForm = () => {
                 <textarea
                     className={styles.textarea}
                     rows={6}
-                    placeholder="Опишите проект..."
+                    placeholder="Напишите информацию о проекте..."
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                 />
